@@ -1,3 +1,5 @@
+import R from 'ramda'
+
 const initState = {
   users: [
     {
@@ -18,6 +20,13 @@ const initState = {
 
 const usersReducer = (state = initState, action) => {
   switch (action.type) {
+    case 'ADD_USER':
+      return R.compose(
+                R.merge({
+                  users: R.concat(state.users, [{id: action.id, name: action.name}])
+                }),
+                R.dissoc('users')
+            )(state)
 
     default: {
       return state
