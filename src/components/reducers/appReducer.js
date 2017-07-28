@@ -16,7 +16,7 @@ const initState = {
   inputValue: ''
 }
 
-export default function usersReducer(state = initState, action) {
+const usersReducer = (state = initState, action) => {
   switch (action.type) {
 
     default: {
@@ -24,3 +24,5 @@ export default function usersReducer(state = initState, action) {
     }
   }
 }
+
+export default usersReducer
