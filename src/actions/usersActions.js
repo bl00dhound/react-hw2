@@ -1,5 +1,3 @@
-import R from 'ramda'
-
 
 const addUser = (startParams) => {
   return {
@@ -9,8 +7,15 @@ const addUser = (startParams) => {
   }
 }
 
+const deleteUser = (id) => {
+  return {
+    type: 'DELETE_USER',
+    id
+  }
+}
 
 
 export {
-  addUser
+  addUser,
+  deleteUser
 }

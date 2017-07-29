@@ -28,6 +28,14 @@ const usersReducer = (state = initState, action) => {
                 R.dissoc('users')
             )(state)
 
+    case 'DELETE_USER':
+      return R.compose(
+                R.merge({
+                  users: R.reject(R.propEq('id', action.id), state.users)
+                }),
+                R.dissoc('users')
+            )(state)
+
     default: {
       return state
     }

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import List from '../components/List'
+import { deleteUser } from '../actions/usersActions'
 
 const mapStateToProps = (state) => {
   return ({
@@ -7,12 +8,13 @@ const mapStateToProps = (state) => {
   })
 }
 
-// const mapDispatchToProps = {
-//   onTodoClick: toggleTodo
-// }
+const mapDispatchToProps = {
+  onDeleteClick: deleteUser
+}
 
 const VisibleList = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(List)
 
 export default VisibleList
