@@ -1,7 +1,7 @@
 import React from 'react'
-import {FormGroup, InputGroup, FormControl, Button, Glyphicon} from 'react-bootstrap/lib'
+import { FormGroup, InputGroup, FormControl, Button, Glyphicon } from 'react-bootstrap/lib'
 import { connect } from 'react-redux'
-import {addUser} from '../actions/usersActions'
+import { addUser, filterUsers, showAll } from '../actions/usersActions'
 
 let Form = ({dispatch}) => {
   let input
@@ -11,7 +11,12 @@ let Form = ({dispatch}) => {
         <FormControl type='text'
                      componentClass="input"
                      placeholder='enter name'
-                     inputRef={(ref) => {input = ref}}
+                     onChange={(event) => {
+                       input = event.target
+                       dispatch(filterUsers({
+                         inputValue: input.value
+                       }))
+                     }}
                      />
         <InputGroup.Button>
           <Button bsStyle='success'
@@ -22,6 +27,7 @@ let Form = ({dispatch}) => {
                       id: Date.now()
                     }))
                     input.value = ''
+                    dispatch(showAll())
                   }}>
               <Glyphicon glyph='plus'/>
           </Button>
