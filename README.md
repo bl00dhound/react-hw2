@@ -1,4 +1,6 @@
 # React-hw2
+
+[Link to the sandbox](https://react-hw2-ckkfizwecx.now.sh)
  
  ### for starting
  
