@@ -1,6 +1,6 @@
 # React-hw2
 
-[Link to the sandbox](https://react-hw2-ckkfizwecx.now.sh)
+[Link to the sandbox](https://react-hw2-ckkfizwecx.now.sh) (it may download so slow)
  
  ### for starting
  
